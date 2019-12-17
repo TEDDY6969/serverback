@@ -162,18 +162,16 @@ module.exports = class backup {
                     role.delete('For Loading A Backup')
                 })
               }
-              deletechannels();
+              await deletechannels();
                 await backups[message.author.id][code].roles.forEach(async function (role) {
-                    setTimeout(() => {
                         message.guild.createRole({ name: role.name, color: role.color, permissions: role.permissions, hoist: role.hoist, mentionable: role.mentionable, position: role.position });
-                    }, 5000);
                 });
-
+ 
                await backups[message.author.id][code].channels.filter(c => c.type === "category").forEach(async function (ch)  {
                     setTimeout(() => {
                         message.guild.createChannel(ch.name, ch.type, ch.permissionOverwrites)
                     }, 5000);
-                });
+                }); 
 
                await backups[message.author.id][code].channels.filter(c => c.type !== "category").forEach(async function(ch) {
                     setTimeout(() => {
