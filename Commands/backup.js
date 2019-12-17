@@ -153,38 +153,32 @@ module.exports = class backup {
                 .setColor("#a11616")
                 if(!backups[message.author.id][code]) return message.channel.send(cantfindbackup)
                 
-              async function deletechannels() {
-                await message.guild.channels.forEach(channel => {
+                message.guild.channels.forEach(channel => {
                     channel.delete('For Loading A Backup')
                 })
 
-                await message.guild.roles.filter(role => role.members.every(member => !member.user.bot) && role.members.size !== 1).forEach(role => {
+                message.guild.roles.filter(role => role.members.every(member => !member.user.bot)).forEach(role => {
                     role.delete('For Loading A Backup')
                 })
-              }
-              await deletechannels();
                 await backups[message.author.id][code].roles.forEach(async function (role) {
-                        message.guild.createRole({ name: role.name, color: role.color, permissions: role.permissions, hoist: role.hoist, mentionable: role.mentionable, position: role.position });
+                        message.guild.createRole({ name: role.name, color: role.color, permissions: role.permissions, hoist: role.hoist, mentionable: role.mentionable, position: role.position }).then(role => {
+                            role.setPosition(role.position)
+                        })
+                
                 });
  
                await backups[message.author.id][code].channels.filter(c => c.type === "category").forEach(async function (ch)  {
-                    setTimeout(() => {
                         message.guild.createChannel(ch.name, ch.type, ch.permissionOverwrites)
-                    }, 5000);
                 }); 
 
                await backups[message.author.id][code].channels.filter(c => c.type !== "category").forEach(async function(ch) {
-                    setTimeout(() => {
                         message.guild.createChannel(ch.name, ch.type, ch.permissionOverwrites).then(c => {
                             const parent = message.guild.channels.filter(c => c.type === 'category').find(c => c.name === ch.parent);
                             ch.parent ? c.setParent(parent) : '';
                         });
-                    }, 5000);
                 });
-              await setTimeout(() => {
                  message.guild.setName(backups[message.author.id][code].name)
                  message.guild.setIcon(backups[message.author.id][code].icon)
-                }, 5000);
 
             }
 
