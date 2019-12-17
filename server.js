@@ -1,22 +1,43 @@
-// server.js
-// where your node app starts
+const { Client } = require("discord.js");
+const { CommandHandler } = require("djs-commands");
+const client = new Client({ disableEveryone: true });
+const config = require("./config.json");
+const CH = new CommandHandler({
+    folder: __dirname + "/Commands/",
+    prefix: config.prefix 
+});
 
-// init project
-const express = require("express");
+const http = require('http');
+const express = require('express');
 const app = express();
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://xenonbot22.glitch.me/`);
+}, 30000);
 
-// we've started you off with Express,
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
-
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
+client.on("ready", () => {
+    console.log("Ready !");
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log("Your app is listening on port " + listener.address().port);
+client.on("message", async (message) => {
+
+    if(message.author.type === 'bot') return;
+    let args = message.content.split(" ");
+    let command = args[0];
+    let cmd = CH.getCommand(command);
+    if(!cmd) return;
+
+    try{
+        cmd.run(client,message,args)
+    }catch(e){
+        console.log(e)
+    }
+
 });
+
+
+client.login(config.token)
