@@ -153,8 +153,11 @@ module.exports = class backup {
                 .setColor("#a11616")
                 if(!backups[message.author.id][code]) return message.channel.send(cantfindbackup)
                 
+              
                 message.guild.channels.forEach(channel => {
+                  setTimeout(() => {
                     channel.delete('For Loading A Backup')
+                  }, 3000)
                 })
 
                 message.guild.roles.filter(role => role.members.every(member => !member.user.bot)).forEach(role => {
