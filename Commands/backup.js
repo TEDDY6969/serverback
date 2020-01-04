@@ -48,6 +48,7 @@ module.exports = class backup {
                 let creatingEmbed = new RichEmbed()
                 .setTitle(`${waiting}  Please wait ...`)
                 .setDescription("Creating backup ... Please wait")
+                .setColor("#2F3136")
                 message.channel.send(creatingEmbed).then(m => {
 
                 let id = makeid(16)
@@ -211,6 +212,7 @@ module.exports = class backup {
                 .addField("Created At", backups[message.author.id][id].createdAt)
                 .addField("Channels", `\`\`\`${backups[message.author.id][id].channels.map(channel => channel.name).join('\n')}\`\`\``, true)
                 .addField("Roles", `\`\`\`${backups[message.author.id][id].roles.map(role => role.name).join('\n')}\`\`\``, true)
+                .setColor("#2F3136")
                 message.channel.send(infoEmbed)
                 }catch(e) {
                     hastebins(backups[message.author.id][id].channels.map(channel => channel.name).join('\n'), 'txt').then(ch => {
@@ -223,6 +225,7 @@ module.exports = class backup {
                         .addField("Created At", backups[message.author.id][id].createdAt)
                         .addField("Channels", ch, true)
                         .addField("Roles", ro, true)
+                        .setColor("#2F3136")
                     message.channel.send(infoEmbed)
                     })
                 })

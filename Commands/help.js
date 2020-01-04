@@ -29,7 +29,7 @@ module.exports = class {
             `)
             .setFooter(`Use \`**x!help [command]\` for more info on a command.
             You can also use \`**x!help [category]\` for more info on a category.`)
-            .setColor("#5DBCD2")
+            .setColor("#2F3136")
             message.channel.send(helpEmbed)
               return;
             }
@@ -52,7 +52,7 @@ __**Commands**__
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                 message.channel.send(embed)
             }
 
@@ -63,7 +63,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                     message.channel.send(showsThisMessageEmbed);
             }
 
@@ -74,7 +74,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                     message.channel.send(infoEmbed);
             }
 
@@ -85,7 +85,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                     message.channel.send(inviteEmbed)
             }
 
@@ -96,7 +96,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                 message.channel.send(inviteEmbed)
             }
 
@@ -107,7 +107,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                 message.channel.send(inviteEmbed)
             }
 
@@ -119,7 +119,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#2F3136")
                 message.channel.send(inviteEmbed)
             }
 
