@@ -12,7 +12,7 @@ module.exports = class ping {
             let pingEmbed = new RichEmbed()
             .setTitle(`${info} Info`)
             .setDescription(`I have a **latency** of **${Math.round(client.ping)}ms**.`)
-            .setColor("#5DBCD2")
+            .setColor("#2F3136")
             message.channel.send(pingEmbed)
         }catch(e) {
             throw e;

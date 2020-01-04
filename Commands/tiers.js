@@ -13,7 +13,7 @@ module.exports = class tiers {
             .setTitle(`${info} Info`)
             .setDescription(`**Xenon Pro** and **Xenon Turbo** are the **paid versions** of Xenon. They extend the existing features of Xenon and add new ones.
 You can buy them [here](https://www.patreon.com/merlinfuchs) and find **more information** and a **detailed list of perks** [here](https://docs.discord.club/xenon/tiers)`)
-            .setColor("#5DBCD2")
+            .setColor("#2F3136")
             message.channel.send(tierEmbed)
         }catch(e) {
             throw e;
