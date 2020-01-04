@@ -185,6 +185,12 @@ module.exports = class backup {
                  message.guild.setIcon(backups[message.author.id][code].icon)
 
             }
+          
+          if(args[1] === "list") {
+              
+            
+            
+          }
 
 
             if(args[1] === "info") {
