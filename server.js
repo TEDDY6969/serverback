@@ -22,7 +22,7 @@ setInterval(() => {
 
 client.on("ready", () => {
     console.log("Ready !");
-    client.user.setActivity(`${approx(client.guilds.size)} Guilds | x!help`, {type: "WATCHING"})
+    client.user.setActivity(`${approx(145000)} Guilds | x!help`, {type: "WATCHING"})
 });
 
 client.on("message", async (message) => {
