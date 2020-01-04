@@ -186,11 +186,7 @@ module.exports = class backup {
 
             }
           
-          if(args[1] === "list") {
-              
-            
-            
-          }
+
 
 
             if(args[1] === "info") {
