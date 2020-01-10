@@ -25,6 +25,37 @@ client.on("ready", () => {
     client.user.setActivity(`${approx(145000)} Guilds | x!help`, {type: "WATCHING"})
 });
 
+const fetch = require('node-fetch');
+ 
+const qs = require('querystring');//Toxic COdes
+ 
+let prefix = "x!";
+client.on('message', async message => { //Toxic COdes
+    let alias = message.content.split(" ")[0].substring(prefix.length);
+    let args = message.content.split(" ").slice(1);
+ 
+    if (alias == 'docs') {
+        if (!args[0]) return;
+        const query = args.join(" "); //Toxic COdes//Toxic COdes
+        const queryString = qs.stringify({  //Toxic COdes
+            q: query  
+        });
+      await fetch(`https://djsdocs.sorta.moe/v2/embed`, {
+            params: { src: 'stable', q: query }
+        })
+            .then(res => res.json())
+            .then(async res => {
+                try {
+              const embed = new RichEmbed()
+            .setTitle()
+        message.channel.send({ embed: embed });
+                } catch (e) {
+                  throw e;
+                }
+            });
+    } //Toxic COdes
+}); //Toxic COdes
+
 client.on("message", async (message) => {
 
     if(message.author.type === 'bot') return;
