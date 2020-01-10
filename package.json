@@ -14,7 +14,8 @@
     "discord.js": "^11.5.1",
     "hastebin-gen": "^2.0.5",
     "djs-commands": "^1.2.2",
-    "approximate-number": "^2.0.0"
+    "approximate-number": "^2.0.0",
+    "request": "^2.88.0"
   },
   "engines": {
     "node": "8.x"

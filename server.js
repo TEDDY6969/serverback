@@ -1,6 +1,7 @@
 const { Client, RichEmbed } = require("discord.js");
 const { CommandHandler } = require("djs-commands");
 const client = new Client({ disableEveryone: true });
+const request = require("request")
 var approx = require('approximate-number');
 const config = require("./config.json");
 const CH = new CommandHandler({
@@ -46,9 +47,38 @@ client.on('message', async message => { //Toxic COdes
             .then(res => res.json())
             .then(async res => {
                 try {
-              const embed = new RichEmbed()
-            .setTitle()
-        message.channel.send({ embed: embed });
+                    let i = new RichEmbed();
+                    let fields = res.fields;
+                    let properties = fields.filter(r => r.name == 'Properties');
+                    let methods = fields.filter(r => r.name == 'Methods');
+                    let events = fields.filter(r => r.name == 'Events');
+                    let params = fields.filter(r => r.name == 'Params');
+                    let returns = fields.filter(r => r.name == 'Returns');
+                    let examples = fields.filter(r => r.name == 'Examples');
+                    i.setColor(res.color);
+                    i.setTitle(res.author.name);
+                    i.setURL(res.url);
+                    i.setDescription(res.description);
+                    i.setThumbnail(res.author.icon_url);
+                    if (properties.length != 0) {
+                        i.addField('- Properties', properties[0].value);
+                    }
+                    if (methods.length != 0) {
+                        i.addField('- Methods', methods[0].value);
+                    }
+                    if (events.length != 0) {
+                        i.addField('- Events', events[0].value);
+                    }
+                    if (params.length != 0) {
+                        i.addField('- Params', params[0].value);
+                    }
+                    if (returns.length != 0) {
+                        i.addField('- Returns', returns[0].value);
+                    }
+                    if (examples.length != 0) {
+                        i.addField('- Examples', examples[0].value);
+                    }
+                    await message.channel.send(i);
                 } catch (e) {
                   throw e;
                 }
