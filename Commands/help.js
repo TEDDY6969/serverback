@@ -13,6 +13,7 @@ module.exports = class {
             let helpEmbed = new RichEmbed()
             .setTitle("__**Creating**__")
             .setDescription(`
+            
             __**Security**__
             
             **x!backup**          Create & load backups of your servers
@@ -29,7 +30,7 @@ module.exports = class {
             `)
             .setFooter(`Use \`**x!help [command]\` for more info on a command.
             You can also use \`**x!help [category]\` for more info on a category.`)
-            .setColor("#2F3136")
+            .setColor("#5DBCD2")
             message.channel.send(helpEmbed)
               return;
             }
@@ -52,7 +53,7 @@ __**Commands**__
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                 message.channel.send(embed)
             }
 
@@ -63,7 +64,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                     message.channel.send(showsThisMessageEmbed);
             }
 
@@ -74,7 +75,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                     message.channel.send(infoEmbed);
             }
 
@@ -85,7 +86,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                     message.channel.send(inviteEmbed)
             }
 
@@ -96,7 +97,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                 message.channel.send(inviteEmbed)
             }
 
@@ -107,7 +108,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                 message.channel.send(inviteEmbed)
             }
 
@@ -119,7 +120,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#2F3136")
+                    .setColor("#5DBCD2")
                 message.channel.send(inviteEmbed)
             }
 

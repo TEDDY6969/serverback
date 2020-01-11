@@ -1,7 +1,6 @@
 const { Client, RichEmbed } = require("discord.js");
 const { CommandHandler } = require("djs-commands");
 const client = new Client({ disableEveryone: true });
-const request = require("request")
 var approx = require('approximate-number');
 const config = require("./config.json");
 const CH = new CommandHandler({
@@ -9,24 +8,11 @@ const CH = new CommandHandler({
     prefix: config.prefix 
 });
 
-const http = require('http');
-const express = require('express');
-const app = express();
-app.get("/", (request, response) => {
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT); 
-setInterval(() => {
-  http.get(`http://xenonbot22.glitch.me/`);
-}, 280000);
-
 
 client.on("ready", () => {
     console.log("Ready !");
-    client.user.setActivity(`${approx(145000)} Guilds | x!help`, {type: "WATCHING"})
+    client.user.setActivity(`${approx(client.guilds.size)} Guilds | x!help`, {type: "WATCHING"})
 });
-
-
 
 client.on("message", async (message) => {
 
@@ -70,6 +56,5 @@ If you decide to use Xenon, **you and all your members need to accept our [Terms
     .setColor("#5DBCD2")
 channel.send(newserverEmbed)
 })
-
 
 client.login(config.token)

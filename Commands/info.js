@@ -19,7 +19,6 @@ module.exports = class info {
          .addField("Guilds", client.guilds.size, true)
          .addField("Users:", client.users.size, true)
          .setFooter("Owned by ~ REVENGE#2179")
-         .setColor("#2F3136")
             message.channel.send(infoEmbed)
         }catch(e) {
             throw e;

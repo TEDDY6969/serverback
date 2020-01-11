@@ -8,7 +8,7 @@ module.exports = class invite {
 
     async run(client, message, args) {
         try{
-            let info = client.emojis.get("655091815401127966")
+            let info = client.emojis.get("655091815401127966") || "ℹ️"
             client.generateInvite(['ADMINISTRATOR']).then(link => {
             let inviteEmbed = new RichEmbed()
             .setTitle(`${info} Info`)
@@ -16,7 +16,7 @@ module.exports = class invite {
 [Xenon](${link})
 [Xenon](https://discordapp.com/api/oauth2/authorize?client_id=524652984425250847&permissions=8&scope=bot) Pro Use \`x!pro\` to get more information.
 [Xenon Turbo](https://discordapp.com/api/oauth2/authorize?client_id=598534174894194719&permissions=8&scope=bot)`)
-            .setColor("#2F3136")
+            .setColor("#5DBCD2")
             message.channel.send(inviteEmbed);
             })
         }catch(e) {
