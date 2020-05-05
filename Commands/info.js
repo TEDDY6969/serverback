@@ -18,7 +18,7 @@ module.exports = class info {
          .addField("Prefix", "x!", true)
          .addField("Guilds", client.guilds.size, true)
          .addField("Users:", client.users.size, true)
-         .setFooter("Owned by ~ REVENGE#2179")
+         .setFooter("Owned by ~ MoDz#2500")
             message.channel.send(infoEmbed)
         }catch(e) {
             throw e;
