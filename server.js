@@ -11,7 +11,7 @@ const CH = new CommandHandler({
 
 client.on("ready", () => {
     console.log("Ready !");
-    client.user.setActivity(`${approx(client.guilds.size)} Guilds | x!help`, {type: "WATCHING"})
+    client.user.setActivity(`${approx(client.guilds.size)} Guilds | x!help`, {type: "Streaming"})
 });
 
 client.on("message", async (message) => {
