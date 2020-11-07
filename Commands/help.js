@@ -21,11 +21,8 @@ module.exports = class {
             __**Others**__
             
             **x!help**            Shows this message
-            **x!info**            Get Information about Xenon
-            **x!invite**          Invite Xenon
             **x!leave**           Let the bot leave
             **x!ping**            Pong
-            **x!tiers**           Shows information about Xenon Pro & Turbo
             
             `)
             .setFooter(`Use \`**x!help [command]\` for more info on a command.
@@ -68,7 +65,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     message.channel.send(showsThisMessageEmbed);
             }
 
-            if(args[1] === "invite") {
+          /*  if(args[1] === "invite") {
                 let inviteEmbed = new RichEmbed()
                     .setTitle("**x!invite**")
                     .setDescription("Invite Xenon")
@@ -77,7 +74,7 @@ You can also use \`x!help [category]\` for more info on a category.`)
 You can also use \`x!help [category]\` for more info on a category.`)
                     .setColor("#5DBCD2")
                     message.channel.send(inviteEmbed)
-            }
+            }*/
 
             if (args[1] === "leave") {
                 let inviteEmbed = new RichEmbed()
