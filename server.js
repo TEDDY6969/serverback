@@ -10,7 +10,7 @@ const CH = new CommandHandler({
 
 
 client.on("ready", () => {
-    console.log("Ready !");
+    console.log("Ready ! editing by Yashraj Gaming");
     client.user.setActivity(`${approx(client.guilds.size)} Guilds | x!help`, {type: "Streaming"})
 });
 

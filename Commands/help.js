@@ -68,17 +68,6 @@ You can also use \`x!help [category]\` for more info on a category.`)
                     message.channel.send(showsThisMessageEmbed);
             }
 
-            if(args[1] === "info") {
-                let infoEmbed = new RichEmbed()
-                    .setTitle("**x!info**")
-                    .setDescription("Get Information about Xenon")
-                    .addBlankField()
-                    .setFooter(`Use \`x!help [command]\` for more info on a command.
-You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
-                    message.channel.send(infoEmbed);
-            }
-
             if(args[1] === "invite") {
                 let inviteEmbed = new RichEmbed()
                     .setTitle("**x!invite**")
@@ -105,18 +94,6 @@ You can also use \`x!help [category]\` for more info on a category.`)
                 let inviteEmbed = new RichEmbed()
                     .setTitle("**x!ping**")
                     .setDescription("Pong")
-                    .addBlankField()
-                    .setFooter(`Use \`x!help [command]\` for more info on a command.
-You can also use \`x!help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
-                message.channel.send(inviteEmbed)
-            }
-
-
-            if (args[1] === "tiers") {
-                let inviteEmbed = new RichEmbed()
-                    .setTitle("**x!tiers**")
-                    .setDescription("Shows information about Xenon Pro & Turbo")
                     .addBlankField()
                     .setFooter(`Use \`x!help [command]\` for more info on a command.
 You can also use \`x!help [category]\` for more info on a category.`)
